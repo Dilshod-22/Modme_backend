@@ -7,11 +7,12 @@ route.get("/AllStudent",(req,res)=>{
 
 route.post("/addStudent",async (req,res)=>{
     try{
-        const {username,phoneNumber,groups,fatherOrMatherNumber} = req.body
+        const {username,phoneNumber,groups,fatherOrMatherNumber,locations} = req.body
         const newUser = new User({
             username:username,
             phoneNumber:phoneNumber,
             groups:groups,
+            locations:locations,
             fatherOrMatherNumber:fatherOrMatherNumber
         })
         await newUser.save()
@@ -25,11 +26,12 @@ route.post("/addStudent",async (req,res)=>{
 
 route.put("/:id",async(req,res)=>{
     try{
-        const {username,phoneNumber,groups,fatherOrMatherNumber} = req.body
+        const {username,phoneNumber,groups,fatherOrMatherNumber,locations} = req.body
         const update = await User.findByIdAndUpdate(req.params.id,{
             username:username,
             phoneNumber:phoneNumber,
             groups:groups,
+            locations:locations,
             fatherOrMatherNumber:fatherOrMatherNumber
         })
         await update.save()

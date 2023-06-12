@@ -1,18 +1,14 @@
 const mongoose = require("mongoose")
 const Schema = new mongoose.Schema({
     username:String,
-    lastname:String,
-    password:String,
-    email:String,
-    image:String,
-    age:Number,
+    phoneNumber:String,
     location:String,
-    role:String,
-    learnSubject:[{
-        name:String,
-        subjectID:String,
+    fatherOrMatherNumber:String,
+    groups:[{
+        teacherName:String,
+        groupName:String,
     }],
-    lastPayTime:String,
+
     createDate:String
 })
 
