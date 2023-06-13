@@ -4,10 +4,7 @@ const Schema = new mongoose.Schema({
     phoneNumber:String,
     location:String,
     fatherOrMatherNumber:String,
-    groups:[{
-        teacherName:String,
-        groupName:String,
-    }],
+    groups:String,
 
     createDate:String
 })
